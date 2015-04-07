@@ -1,12 +1,12 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Title Goes Here<br>Up To Two Lines',
-    subtitle: 'Subtitle Goes Here',
-    //eventInfo: {
-    //  title: 'Google I/O',
-    //  date: '6/x/2013'
-    //},
+    title: 'Maintainable CSS',
+    subtitle: 'Build Better Web App UI',
+    eventInfo: {
+     title: 'UWeb',
+     date: '4/9/2015'
+    },
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -22,12 +22,11 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Firstname Lastname',
-    company: 'Job Title<br>Google',
-    gplus: 'http://plus.google.com/1234567890',
-    twitter: '@yourhandle',
-    www: 'http://www.you.com',
-    github: 'http://github.com/you'
+    name: 'John Wu',
+    company: 'Student, Front End Engineer',
+    twitter: '@leapoahead',
+    www: 'http://www.leapoahead.com',
+    github: 'http://github.com/tjwudi'
   }/*, {
     name: 'Second Name',
     company: 'Job Title, Google',
