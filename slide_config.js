@@ -23,7 +23,7 @@ var SLIDE_CONFIG = {
   // Author information
   presenters: [{
     name: 'John Wu',
-    company: 'Student, Front End Engineer',
+    company: 'Student, Web Developer',
     twitter: '@leapoahead',
     www: 'http://www.leapoahead.com',
     github: 'http://github.com/tjwudi'

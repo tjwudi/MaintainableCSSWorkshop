@@ -126,6 +126,440 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
 
+  <slide>
+    <hgroup>
+      <h2>Architecture And Conventions</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Categorization</li>
+        <li>Naming Convention</li>
+        <li>State-based Design</li>
+      </ul>
+    </article>
+  </slide>
+
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Categorization</h2>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Categories Of Styles</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Base</li>
+        <li>Layout</li>
+        <li>Module</li>
+        <li>Theme (will not be discussed today)</li>
+      </ul>
+      <p>Reference: SMACSS by @snook</p>
+    </article>
+  </slide>
+
+
+
+
+
+  <slide>
+    <hgroup>
+      <h2>Base Styles</h2>
+    </hgroup>
+    <article class="build">
+      <p>
+        Base styles are generally styles with tag selectors.
+      </p>
+
+
+      <pre class="prettyprint" data-lang="css">
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; 
+  font: inherit; 
+  margin: 0; 
+}
+
+button {
+  overflow: visible;
+}
+      </pre>
+    </article>
+  </slide>
+
+
+
+  <slide>
+    <hgroup>
+      <h2>Base Styles</h2>
+    </hgroup>
+    <article>
+      <p>
+        Base styles are usually used to reset or normalize.
+      </p>
+
+      <ul>
+        <li><a href="https://necolas.github.io/normalize.css">Normalize.css</a></li>
+        <li><a href="http://meyerweb.com/eric/tools/css/reset/">Reset.css</a></li>
+      </ul>
+
+      <p>Learn more with given links.</p>
+    </article>
+  </slide>
+
+
+
+  <slide>
+    <hgroup>
+      <h2>Base Styles vs. Utility Classes</h2>
+    </hgroup>
+    <article>
+      <p>
+        Base styles and utility classes are generally global classes.
+      </p>
+      <p>Examples of utility classes</p>
+      <pre class="prettyprint" data-lang="css">
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+      </pre>
+      <p>
+        Avoiding utility classes is a personal/team choice. I personally prefer using CSS preprocessors mixins rather than creating global utility classes.
+      </p>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Base Styles</h2>
+    </hgroup>
+    <article>
+      <p>Base styles should be carefully regulated and reviewed by team. Reasons are</p>
+      <ul>
+        <li>Performance penalty</li>
+        <li>Unused code</li>
+        <li>Unexpected regression (on current projects)</li>
+      </ul>
+      <p>Different projects, teams or scenarios may lead to different usages of base styles.</p>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Layout &amp; Modules</h2>
+    </hgroup>
+    <article class="build">
+      <p>Open up <a href="http://5by5.tv/">5by5.tv</a></p>
+      <p>Think: What is module, and what is layout?</p>
+      <ul class="build">
+        <li>Module, a single area on the page that do and only do one thing well.</li>
+        <li>Layout, <b>pattern</b> of the outside of modules, whose job is to constraint modules.</li>
+      </ul>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Layout &amp; Modules - Exercise</h2> 
+    </hgroup>
+    <article>
+      <p>Design the <b>LATEST EPISODES</b> layout structure of 5by5.tv. (5mins)</p>
+      <p>Have a cup of coffee.</p>
+      <p>Show your work to each other.</p>
+    </article> 
+  </slide> 
+
+
+  <slide>
+    <hgroup>
+      <h2>Layout &amp; Modules</h2>
+    </hgroup>
+    <article class="build flexbox vcenter">
+      <img src="images/uweb/tbexample1.png" class="reflect" alt="Description" title="Description">
+    </article>
+  </slide>
+
+
+
+  <slide>
+    <hgroup>
+      <h2>LM Architecture</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/uweb/mod-submod.png" class="reflect" alt="Description" title="Description">
+    </article>
+  </slide>
+
+
+
+  <slide>
+    <hgroup>
+      <h2>LM Architecture</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <p>
+        Window (Layout) - Body (Module) - Layout - Module - Layout - Module ...
+      </p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>LM Architecture - Example</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/uweb/example1.png" class="reflect" alt="Description" title="Description">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>LM Architecture - Example</h2> 
+    </hgroup>
+    <article>
+      <p><a href="http://jsbin.com/seguku">http://jsbin.com/seguku</a></p>
+    </article> 
+  </slide> 
+
+
+  <slide>
+    <hgroup>
+      <h2>Layout &amp; Modules - Exercise</h2> 
+    </hgroup>
+    <article>
+      <p>Redesign the <b>LATEST EPISODES</b> layout structure of 5by5.tv. (5mins)</p>
+      <p>Have a cup of coffee.</p>
+      <p>Show your work to each other.</p>
+    </article> 
+  </slide> 
+
+
+  <slide>
+    <hgroup>
+      <h2>Layout &amp; Modules - LM Architecture</h2>
+    </hgroup>
+    <article class="build">
+      <p>
+        Things can change! We may need to rethink on the LM Architecture when building ...
+      </p>
+      <ul>
+        <li>Games (which need totally different architecture)</li>
+        <li>Page with slide menus (off-canvas)</li>
+      </ul>
+      <p>
+        There is no best decision. You have to make decision for every different projects or scenarios. LM Architecture is a mix of my ideas and SMACSS of @snook, and it sure will have drawbacks.
+      </p>
+    </article>
+  </slide>
+
+
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Naming Conventions</h2>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Importance Of Naming Conventions</h2>
+    </hgroup>
+    <article>
+      <p>Ask Java guys.</p>
+    </article>
+  </slide> 
+
+
+  <slide>
+    <hgroup>
+      <h2>Naming Layout Styles</h2>
+    </hgroup>
+    <article>
+      <p>Add prefix <code>layout-</code></p>
+      <pre class="prettyprint" data-lang="css">
+.layout-col-1 { }
+.layout-col-3 { }
+.layout-container { }
+      </pre>
+      <p>Choosing a prefix is your personal/team choice. You can even choose not to have any prefix for layout styles. But you should always have clear documentation on that.</p>
+    </article>
+  </slide> 
+
+  <slide>
+    <hgroup>
+      <h2>Naming Modules</h2>
+    </hgroup>
+    <article class="build">
+      <p>Modules may have following things to be named</p>
+      <ul>
+        <li>itself</li>
+        <li>variations</li>
+        <li>sub-components (not sub-modules)</li>
+        <li>states</li>
+      </ul>
+      <pre class="prettyprint" data-lang="css">
+.btn { }  /* module itself */
+.btn-lg { } /* variations */
+.btn-text { } /* sub-components */
+.btn-pressed, .btn:hover { } /* states */
+      </pre>
+    </article>
+  </slide> 
+
+  <slide>
+    <hgroup>
+      <h2>Naming Modules - Example</h2>
+    </hgroup>
+    <article>
+      <p><a href="http://jsbin.com/muyesu/1/">http://jsbin.com/muyesu/1/</a></p>
+    </article>
+  </slide> 
+
+
+  <slide>
+    <hgroup>
+      <h2>Naming Modules - Example</h2>
+    </hgroup>
+    <article class="build flexbox vcenter">
+      <img src="images/uweb/tbexample3.png" class="reflect" alt="Description" title="Description">
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Naming Modules - Example</h2>
+    </hgroup>
+    <article class="build flexbox vcenter">
+      <img src="images/uweb/tbexample2.png" class="reflect" alt="Description" title="Description">
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Naming Modules - Descendant Selectors?</h2>
+    </hgroup>
+    <article class="build">
+      <pre class="prettyprint" data-lang="css">
+.btn .btn-large {}
+.btn .btn-small {}
+      </pre>
+      <p>Personally, I argue that you should avoid descendant selectors in most cases.</p>
+      <ul>
+        <li>Descendant selectors are incrediblely expensive</li>
+        <li>Detach CSS from HTML</li>
+        <li>Modules should do one thing well, so they are generally small</li>
+      </ul>
+      <p>Again, this is a personal/team choice, but should be keep in mind. For large scale projects like Taobao.com, there should be another solution for that. (Thoughts?)</p>
+    </article>
+  </slide> 
+
+
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>State-based Design</h2>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>State-based Design</h2>
+    </hgroup>
+    <article>
+      <p>States can be triggered by</p>
+      <ul>
+        <li>Classes (<code>.btn-activated, .btn-pressed</code>)</li>
+        <li>Pseudo-classes (<code>.btn:hover</code>)</li>
+        <li>Attribute selectors (<a href="http://jsbin.com/tajeyo/1/">http://jsbin.com/tajeyo/1/</a>)</li>
+        <li>Media queries (<a href="http://jsbin.com/jimapo/1/">http://jsbin.com/jimapo/1/</a>)</li>
+        <li>Element queries (in the future)</li>
+      </ul>
+    </article>
+  </slide> 
+
+
+  <slide>
+    <hgroup>
+      <h2>Code Organization</h2>
+    </hgroup>
+    <article>
+      <p>Group your code into several sections, instead of relying on naming conventions.</p>
+      <ul>
+        <li>Complex naming conventions increases visual noise</li>
+        <li>Complex naming conventions is hard to keep consistency (w/o tools)</li>
+      </ul>
+    </article>
+  </slide>
+
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Tools - CSS Preprocessors</h2>
+      <h3>By Examples</h3>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>LESS</h2>
+    </hgroup>
+    <article>
+      <blockquote>Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.</blockquote>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>LESS - Highlighted Features</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Nesting/&amp; reference</li>
+        <li><code>@import</code></li>
+        <li>Variables</li>
+        <li>Mixins</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>LESS</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Think before you use</li>
+        <li>Develop a style guide</li>
+        <li>Example: Flat UI Pro</li>
+        <li><a href="http://lesscss.org/">Documentation</a></li>
+        <li>Automated compilation using Webpack/Grunt/Gulp etc.</li>
+      </ul>
+    </article>
+  </slide>
+
   <slide class="backdrop"></slide>
 </slides>
 
